@@ -1,7 +1,7 @@
 # Dockerfile for PDG LaTeX image
 
 FROM centos:7
-LABEL maintainer="Juerg Beringer <jberinger@lbl.gov>"
+LABEL maintainer="Juerg Beringer <juerg.beringer@gmail.com>"
 
 RUN yum -y install make && \
     yum -y install subversion && \
@@ -9,5 +9,13 @@ RUN yum -y install make && \
     yum clean all
 
 WORKDIR /tmp/install-tl
-COPY install-tl-unx.tar.gz .
-RUN tar -xzvf install-tl-unx.tar.gz --strip-components=1
+COPY install-tl-unx.tar.gz pdglatex.profile ./
+RUN tar -xzvf install-tl-unx.tar.gz --strip-components=1 && \
+    ./install-tl -profile pdglatex.profile
+
+# Run-time environment
+ENV PATH /usr/local/texlive/2018/bin/x86_64-linux/:$PATH
+
+# Normally will override this with -v ${PWD}:${PWD} -w ${PWD}
+VOLUME /home
+WORKDIR /home
