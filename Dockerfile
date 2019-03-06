@@ -12,6 +12,7 @@ WORKDIR /tmp/install-tl
 COPY install-tl-unx.tar.gz pdglatex.profile ./
 RUN tar -xzvf install-tl-unx.tar.gz --strip-components=1 && \
     ./install-tl -profile pdglatex.profile
+RUN rm -rf /tmp/install-tl
 
 # Run-time environment
 ENV PATH /usr/local/texlive/2018/bin/x86_64-linux/:$PATH
