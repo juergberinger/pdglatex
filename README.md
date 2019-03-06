@@ -7,7 +7,7 @@ This Docker image contains an installation of TeXLive 2018 with all the packages
 
 To use it, you need to install Docker on your computer. See the instructions at [https://docs.docker.com/install/](https://docs.docker.com/install/) on how to do this.
 
-## Usage
+## Usage (Linux, Mac OS)
 
 After installing Docker, get the latest version of this image from Docker Hub:
 ```bash
@@ -30,6 +30,10 @@ Alternatively you can run the Docker image directly as follows:
 docker run --rm -it -u `id -u`:`id -g` -v ${PWD}:${PWD} -w ${PWD} juergberinger/pdglatex
 ```
 At the resulting `bash` shell prompt, you can manually run either `make`  or `pdflatex/bibtex`, following the instructions in PdgWorkspace on how to run LaTeX for PDG reviews.
+
+## Usage (WIndows)
+
+While Docker is available for Windows and this image should run as-is, the commands to run may be different, and the`pdgmake.sh` script may not work. Currently running this image on Windows is not supported.
 
 ## Notes
 
