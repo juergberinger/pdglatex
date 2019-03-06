@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/bash
 
-docker run --rm -it -u `id -u`:`id -g` -v ${PWD}:${PWD} -w ${PWD} pdglatex
+docker run --rm -it -u `id -u`:`id -g` -v ${PWD}:${PWD} -w ${PWD} juergberinger/pdglatex
