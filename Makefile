@@ -7,9 +7,9 @@ build:
 run:
 	@docker run --rm -it -u $(shell id -u):$(shell id -g) -v ${PWD}:${PWD} -w ${PWD} pdglatex
 
-rundev:
-	@docker pull juergberinger/pdglatex:dev
-	@docker run --rm -it -u $(shell id -u):$(shell id -g) -v ${PWD}:${PWD} -w ${PWD} juergberinger/pdglatex:dev
+runlatest:
+	@docker pull juergberinger/pdglatex
+	@docker run --rm -it -u $(shell id -u):$(shell id -g) -v ${PWD}:${PWD} -w ${PWD} juergberinger/pdglatex
 
 restart:
 	@sudo systemctl restart docker
