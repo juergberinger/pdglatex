@@ -15,6 +15,7 @@ collection-fontsrecommended 1
 collection-latex 1
 collection-latexrecommended 1
 collection-latexextra 1
+collection-bibtexextra 1
 instopt_adjustpath 0
 instopt_adjustrepo 1
 instopt_letter 0
